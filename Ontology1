@@ -1,0 +1,52 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Class rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#Woman">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#Human"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#Animal"/>
+  <owl:Class rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#Dog">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#Cat"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="http://lab.Jena.Kdeg.ie/Ontology1#Animal"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#Bird">
+    <rdfs:subClassOf rdf:resource="http://lab.Jena.Kdeg.ie/Ontology1#Animal"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#Siamese">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#Cat"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#Cat">
+    <rdfs:subClassOf rdf:resource="http://lab.Jena.Kdeg.ie/Ontology1#Animal"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#Burmese">
+    <rdfs:subClassOf rdf:resource="http://lab.Jena.Kdeg.ie/Ontology1#Cat"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#Man">
+    <rdfs:subClassOf rdf:resource="http://lab.Jena.Kdeg.ie/Ontology1#Human"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#runs_after">
+    <owl:equivalentProperty>
+      <owl:ObjectProperty rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#chases"/>
+    </owl:equivalentProperty>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#chased_by">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#chases"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#chases">
+    <rdfs:range rdf:resource="http://lab.Jena.Kdeg.ie/Ontology1#Cat"/>
+    <rdfs:domain rdf:resource="http://lab.Jena.Kdeg.ie/Ontology1#Dog"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://lab.Jena.Kdeg.ie/Ontology1#eats">
+    <rdfs:subPropertyOf rdf:resource="http://lab.Jena.Kdeg.ie/Ontology1#chases"/>
+  </owl:ObjectProperty>
+</rdf:RDF>
